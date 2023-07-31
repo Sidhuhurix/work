@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initia'l-scale=1.0" />
+    <title>Assignment</title>
+    <style>
+      body {
+        background-color: rgb(17, 16, 17);;
+        display: grid;
+        place-content: center;
+        min-height: 100vh;
+        margin: 0;
+        
+       
+     
+      }
+      .container {
+        background-color: rgb(97, 52, 139);
+        width: 600px; 
+        display: grid;
+        place-items: center;
+        grid-template-columns: 1fr 1fr;
+        border-radius: 5%;
+        
+      overflow: hidden;
+      }
+      .fortext {
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 30px;
+      }
+      .forimage {
+        height: 400px;
+      }
+      .span {
+        color: rgb(71, 12, 126);
+      }
+      .image {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 5%;
+        image-rendering: crisp-edges;
+      }
+      .icons {
+        display: grid;
+        grid-template-columns: 2fr 2fr 2fr;
+      }
+      .heading{
+        color: white;
+      }
+      .paragraph{
+        color: rgb(189, 186, 186);
+
+      }
+      h3{
+        color: white;
+      }
+      h5{
+        color: rgb(189, 186, 186);
+      }
+
+      @media (max-width: 600px) {
+        .container {
+          display: grid;
+          grid-template-columns:1fr;
+          padding-left: 50px;
+          padding-right: 50px; 
+          border-radius: 5%;
+        }
+        .fortext {
+          padding-left: 50px;
+          padding-right: 50px; 
+        }
+        .forimage {
+            height: 400px; 
+            padding-left: 50px;
+          padding-right: 50px; 
+        }
+        
+      }
+      @media (mix-width: 200px) {
+        .container {
+          display: grid;
+          grid-template-columns:1fr;
+          padding-left: 50px;
+          padding-right: 50px; 
+        }
+        .fortext {
+          padding-left: 50px;
+          padding-right: 50px; 
+        }
+        .forimage {
+            height: 400px; 
+            padding-left: 50px;
+          padding-right: 50px; 
+        }
+        
+      }
+
+     
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="fortext">
+        <h2 class="heading">
+          Get <span class="span">Insights</span> help your business grow.
+        </h2>
+        <p class="paragraph">
+          Hey Sid here. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident
+          doloribus dolore, nobis esse maxime fugit dignissimos harum,
+          blanditiis nostrum, vitae ipsum ipsa hic odit? Tempora laboriosam
+          accusantium dolorum nemo praesentium!
+        </p>
+        <div class="icons">
+          <div>
+            <h3>10k+</h3>
+            <h5>COMPANIES</h5>
+          </div>
+          <div>
+            <h3>314</h3>
+            <h5>TEMPLATE<h5>
+          </div>
+          <div>
+            <h3>12M+</h3>
+            <h5>QUERIES<h5>
+          </div>
+        </div>
+      </div>
+      <div class="forimage">
+        <img
+          class="image"
+          src="https://www.velox-systems.com/wp-content/uploads/2018/06/shutterstock_712414756.jpg"
+          alt="image of a man"
+        
+        />
+      </div>
+    </div>
+  </body>
+</html>
