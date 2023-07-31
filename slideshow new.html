@@ -5,17 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Slideshow with Arrows, Timer, and Pause on Hover</title>
     <style>
+      /* Center the slideshow container */
       .slideshow {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 400px; /* Set the height as per your requirement */
+        height: 200px; /* Set the height as per your requirement */
       }
 
       /* Hide all images by default */
       .slideshow img {
         display: none;
-        height: 400px;
+        height: 200px;
       }
 
       /* Show the first image */
@@ -49,10 +50,7 @@
         src="https://hips.hearstapps.com/hmg-prod/images/peaky-blinders-1655317442.jpg?crop=0.888888888888889xw:1xh;center,top"
         alt="Peaky Blinders"
       />
-      <img
-        src="https://elementalspot.com/wp-content/uploads/2023/03/Damon-Salvatore-Outtfits-from-Vampire-Diaries-Fashion-Style-Looks.jpg"
-        alt="Damon Salvator"
-      />
+      <img src="image5.jpg" alt="Image 5" />
     </div>
     <div>
       <span class="arrow-button" id="prevButton">&#10094;</span>
@@ -93,7 +91,7 @@
 
       // Start the slideshow timer
       function startSlideshow() {
-        intervalId = setInterval(showNextImage, 1000); // Change image every 10 seconds
+        intervalId = setInterval(showNextImage, 2000); // Change image every 10 seconds
       }
 
       // Stop the slideshow timer
@@ -109,11 +107,13 @@
       prevButton.addEventListener("click", () => {
         stopSlideshow();
         showPrevImage();
+        startSlideshow(); // Restart the timer after manual image change
       });
 
       nextButton.addEventListener("click", () => {
         stopSlideshow();
         showNextImage();
+        startSlideshow(); // Restart the timer after manual image change
       });
 
       // Event listener for mouseover (pause slideshow)
