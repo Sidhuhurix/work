@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      fetch("https://restcountries.com/v3.1/all")
+        .then((res) => res.json())
+
+        .then((done) => done.sort((a, b) => b.population - a.population))
+        .then((cou) => cou.map((cou) => cou.name.common))
+        .then((data) => printCountries(data));
+
+      //   function printCountries(data) {
+      //     const div = document.createElement("div");
+      //     div.innerHTML = data.join();
+      //     document.body.appendChild(div);
+      //   }
+
+      //   printCountries(data);
+      function printCountries(data) {
+        const ul = document.createElement("ol");
+        data.forEach((country) => {
+          const li = document.createElement("li");
+          li.textContent = country;
+          ul.append(li);
+        });
+        document.body.append(ul);
+      }
+
+      printCountries(data);
+    </script>
+  </body>
+</html>
