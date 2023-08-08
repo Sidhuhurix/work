@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 5 Comments</title>
+</head>
+
+<body>
+    <h1>Author's First Blog</h1>
+     <div id="blog-post"></div>
+ <h2>Top 5 Comments</h2>
+     <ul id="comments-list"></ul>
+
+ 
+    <script>
+        // Fetch blog posts for the author with userId=2
+        fetch("https://jsonplaceholder.typicode.com/posts?userId=2")
+            .then((response) => response.json())
+            .then((blogPosts) => {
+// Check if there are blog posts
+// Get the first blog post ID
+ const firstPostId = blogPosts[0].id;
+
+ // Display the title and body of the first blog post
+const blogPostContainer = document.getElementById("blog-post");
+ const blogPostElement = document.createElement("div");
+ blogPostElement.innerHTML = `<h3>${blogPosts[0].title}</h3>`;
+ const bodyParagraph = document.createElement("p");
+bodyParagraph.innerText = blogPosts[0].body;
+blogPostElement.append(bodyParagraph);
+ blogPostContainer.append(blogPostElement);
+ // Fetch top 5 comments for the first blog post
+ fetch(
+`https://jsonplaceholder.typicode.com/comments?postId=${firstPostId}`
+ ) .then((response) => response.json())
+ .then((comments) => {
+ // Display the top 5 comments
+ const commentsList = document.getElementById("comments-list");
+for (let i = 0; i < 5 && i < comments.length; i++) {
+const commentElement = document.createElement("li");
+ commentElement.innerText = comments[i].body;
+commentsList.appendChild(commentElement);
+ }
+ }) .catch((error) => console.error("Error fetching comments:", error));
+ })
+ .catch((error) => console.error("Error fetching blog posts:", error));
+</script>
+
+</body >
+</html >
